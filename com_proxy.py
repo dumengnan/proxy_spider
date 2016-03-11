@@ -40,7 +40,7 @@ def parse_html(url_address):
                 i = i + 1
             proxy_url = proxy_ip + ':' + proxy_port
             
-            proxy = ProxyItem(proxy_url, proxy_locate, proxy_type)
+            proxy = ProxyItem(proxy_url, proxy_locate, 'HTTP')
             data_save.saveToDb(proxy)
                             
 

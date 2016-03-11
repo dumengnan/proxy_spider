@@ -36,13 +36,13 @@ class ThreadPool:
         self.tasks.join()
 
 
-def print_time():
+def print_time(hello, world):
     time.sleep(2)
-    print time.time()
+    print str(time.time()) + hello + world
 
 if __name__ == '__main__':
     pool = ThreadPool(5)
     for i in range(10):
-        pool.add_task(print_time)
+        pool.add_task(print_time,'world','hello')
     pool.wait_completion()
     

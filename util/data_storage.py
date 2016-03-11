@@ -7,19 +7,15 @@ import pymongo
 class DataSaveToMongo:
 
     def __init__(self):
-        print 'DataSaveToMongo init start'
         connection = pymongo.MongoClient(
                 "localhost",
                 27017
                 )
         db = connection['proxyip_data']
         self.collection = db['proxyip_collection']
-        print 'DataSaveToMongo init end'
 
     def saveToDb(self,item):
-        print 'hello start'
         self.collection.insert(item.__dict__)
-        print 'proxy ip added to MongoDB database'
 
 if __name__ == '__main__':
     proxy_url = 'test'

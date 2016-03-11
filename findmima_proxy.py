@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 from bs4 import BeautifulSoup
-from util.url_request import reqDirect
+from util.url_request import reqByHttpProxy
 
 def parse_content(html_content):
     soup = BeautifulSoup(html_content)
@@ -15,7 +15,7 @@ def parse_content(html_content):
 
 def main():
     start_url = 'http://vpn.hn-seo.com/'
-    html_content = reqDirect(start_url)
+    html_content = reqByHttpProxy(start_url)
 
     parse_content(html_content)
 
