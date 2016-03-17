@@ -17,6 +17,9 @@ class DataSaveToMongo:
     def saveToDb(self,item):
         self.collection.insert(item.__dict__)
 
+    def saveOneToDb(self, dict_data):
+        self.collection.insert(dict_data)
+
 if __name__ == '__main__':
     proxy_url = 'test'
     proxy_locate = 'Japen'
